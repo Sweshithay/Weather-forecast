@@ -1,0 +1,19 @@
+def display_weather(city, temperature, humidity, wind_speed, description):
+    print(f"Weather forecast for {city}:")
+    print(f"Temperature: {temperature}Â°C")
+    print(f"Humidity: {humidity}%")
+    print(f"Wind Speed: {wind_speed} m/s")
+    print(f"Description: {description}")
+
+def main():
+    api_key = "YOUR_OPENWEATHERMAP_API_KEY"  # Replace with your actual API key
+    location = input("Enter the name of a city or a zip code: ")
+
+    weather_info = get_weather(api_key, location)
+
+    if weather_info:
+        temperature, humidity, wind_speed, description = weather_info
+        display_weather(location, temperature, humidity, wind_speed, description)
+
+if _name_ == "_main_":
+    main()
